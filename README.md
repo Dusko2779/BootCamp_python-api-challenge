@@ -18,13 +18,28 @@ To get started, the code required to generate random geographic coordinates and 
 Requirement 1: Create Plots to Showcase the Relationship Between Weather Variables and Latitude
 To fulfill the first requirement, you'll use the OpenWeatherMap API to retrieve weather data from the cities list generated in the starter code. Next, you'll create a series of scatter plots to showcase the following relationships:
 
+![image](https://github.com/Dusko2779/BootCamp_python-api-challenge/assets/134830906/76c1a1fe-1f31-405b-abbb-1183932bfb23)
+
+
 Latitude vs. Temperature
+
+![Latitude_vs_Temperature_Scatter](https://github.com/Dusko2779/BootCamp_python-api-challenge/assets/134830906/fba62cef-bee1-4ed6-a61b-1ea951dcc763)
+
 
 Latitude vs. Humidity
 
+![Latitude_vs_Humidity_Scatter](https://github.com/Dusko2779/BootCamp_python-api-challenge/assets/134830906/b1880496-4a4f-4dcc-96c0-5279438f4e78)
+
+
 Latitude vs. Cloudiness
 
+![Latitude_vs_Cloudiness_Scatter](https://github.com/Dusko2779/BootCamp_python-api-challenge/assets/134830906/e12eaea9-3ca9-4e8c-bf4a-141861ccb67f)
+
+
 Latitude vs. Wind Speed
+
+![Latitude_vs_Wind_Speed_Scatter](https://github.com/Dusko2779/BootCamp_python-api-challenge/assets/134830906/be710bbb-606c-407a-b8ef-1f71050a1fbe)
+
 
 ### Requirement 2: Compute Linear Regression for Each Relationship
 To fulfill the second requirement, compute the linear regression for each relationship. Separate the plots into Northern Hemisphere (greater than or equal to 0 degrees latitude) and Southern Hemisphere (less than 0 degrees latitude). You may find it helpful to define a function in order to create the linear regression plots.
@@ -73,32 +88,3 @@ A max temperature lower than 27 degrees but higher than 21
 Wind speed less than 4.5 m/s
 
 Zero cloudiness
-
-NOTE
-Feel free to adjust your specifications, but make sure to set a reasonable limit to the number of rows returned by your API requests.
-
-Create a new DataFrame called hotel_df to store the city, country, coordinates, and humidity.
-
-For each city, use the Geoapify API to find the first hotel located within 10,000 metres of your coordinates.
-
-Add the hotel name and the country as additional information in the hover message for each city in the map as in the following image:
-
-Hotel map
-
-### Hints and Considerations
-The city data that you generate is based on random coordinates and different query times, so your outputs will not be an exact match to the provided starter notebook.
-
-If you'd like a refresher on the geographic coordinate system, this siteLinks to an external site. has great information.
-
-Take some time to study the OpenWeatherMap API. Based on your initial study, you should be able to answer basic questions about the API: Where do you request the API key? Which Weather API in particular will you need? What URL endpoints does it expect? What JSON structure does it respond with? Before you write a line of code, you should have a crystal-clear understanding of your intended outcome.
-
-A starter code for citipy has been provided. However, if you're craving an extra challenge, push yourself to learn how it works by using the citipy Python libraryLinks to an external site.. Before you try to incorporate the library in your analysis, start with simple test cases outside of your main script to confirm that you are using it correctly. Often, when introduced to a new library, learners spend hours trying to figure out errors in their code when a simple test case can save you a lot of time and frustration.
-
-You will need to apply your critical thinking skills to understand how and why we're recommending these tools. What is citipy used for? Why would you use it in conjunction with the OpenWeatherMap API? How would you do so?
-
-While building your script, pay attention to the cities you are using in your query pool. Are you covering the full range of latitudes and longitudes? Or are you choosing 500 cities from one region of the world? Even if you were a geography genius, simply listing 500 cities based on your personal selection would create a biased dataset. Try to think of ways that you can counter these selection issues.
-
-Hint: Consider the full range of latitudes.
-Once you have computed the linear regression for one relationship, you will follow a similar process for all other charts. As a bonus, try to create a function that will create these charts based on different parameters.
-
-Remember that each coordinate will trigger a separate call to the Geoapify API. If you're creating your own criteria to plan your vacation, try to reduce the results in your DataFrame to 10 or fewer cities.
